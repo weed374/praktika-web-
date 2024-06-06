@@ -1,0 +1,537 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f4f4f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#themeToggleBtn {
+    /* Задний фон кнопки */
+    background-image: url('день ноч.png');
+    /* Другие свойства кнопки */
+    background-size: cover; /* Картинка заполняет всю кнопку */
+    background-repeat: no-repeat; /* Отключаем повторение фона */
+    /* Другие свойства кнопки */
+    width: 100px;
+    height: 50px;
+    /* Другие свойства */
+}
+
+
+/* Стили для светлой темы */
+.light-theme {
+    background-color: #ffffff; /* Фоновый цвет */
+    color: #000000; /* Цвет текста */
+}
+
+/* Стили для темной темы */
+.dark-theme {
+    background-color: #212121; /* Фоновый цвет */
+    color: #ffffff; /* Цвет текста */
+}
+
+/* Пример стилей для кнопки смены темы */
+.theme-toggle-button {
+    background-color: #f0f0f0; /* Цвет фона кнопки */
+    color: #000000; /* Цвет текста кнопки */
+    border: none; /* Убираем границу кнопки */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Изменяем курсор при наведении */
+}
+
+/* Стили для кнопки смены темы при наведении */
+.theme-toggle-button:hover {
+    background-color: #e0e0e0; /* Изменяем цвет фона при наведении */
+}
+
+
+
+
+
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(to bottom, #ff416c, #c1bbba);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 20px; /* Increased padding to make the button larger */
+    font-size: 15px; /* Adjust font size if necessary */
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 999;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+#scroll-to-top {
+    display: block;
+    margin: 20px auto;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#scroll-to-top:hover {
+    background-color: #555;
+}
+
+.item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.item p {
+    margin: 10px 0;
+}
+
+.item button {
+    background-color: #f74646;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.item button:hover {
+    background-color: #45a049;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.small-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.small-buttons button {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 0;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.small-buttons button img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    transition: transform 0.1s;
+}
+
+.small-buttons button img:hover {
+    transform: scale(1.1);
+}
+
+.left-align {
+    text-align: left;
+}
+
+.tovar {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    padding: 10px;
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.pop {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.item.centered {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item.centered img {
+    width: 150px;
+    height: auto;
+}
+
+s {
+    font-size: 12px;
+    color: gray;
+}
+
+footer {
+    background-color: gray;
+    color: rgb(167, 165, 165);
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.footer-column {
+    text-align: left;
+}
+
+footer p {
+    grid-column: span 4;
+    margin-top: 20px;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.subscribe-form input[type="email"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.subscribe-form button {
+    padding: 8px;
+    background-color: #fff;
+    color: gray;
+    border: 2px solid #acadac;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.subscribe-form button:hover {
+    background-color: gray;
+    color: #fff;
+}
+
+.social-icons, .payment-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-icons img, .payment-icons img {
+    width: 30px;
+    height: auto;
+}
+
+header {
+    background-color: white;
+    color: #333;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.top-nav a:hover {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.catalog-button,
+.account-button {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.catalog-button:hover,
+.account-button:hover {
+    background-color: darkred;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 300px;
+}
+
+.search-form button {
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.login-form,
+.register-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.login-form h2,
+.register-form h2 {
+    margin-top: 0;
+}
+
+.login-form label,
+.register-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.register-form input[type="text"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form button,
+.register-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form button:hover,
+.register-form button:hover {
+    background-color: darkred;
+}
+
+.header-icons img {
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 10px;
+    flex-grow: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(13, auto);
+    }
+
+    .search-form input[type="text"] {
+        width: 150px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .top-nav {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .header-icons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .catalog-button,
+    .account-button {
+        padding: 5px 10px;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(25, auto);
+    }
+
+    .search-form input[type="text"] {
+        width: 100px;
+    }
+
+    .header-icons {
+        align-items: center;
+    }
+
+    .catalog-button,
+    .account-button {
+        padding: 5px 10px;
+    }
+}
+
+button {
+    background-color: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f4f4f9;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: #222;
+}
+
+.dark-mode .item {
+    background-color: #444;
+    border-color: #555;
+}
+
+.dark-mode button {
+    background-color: #444;
+    color: #fff;
+    border-color: #888;
+}
+
+.dark-mode button:hover {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
